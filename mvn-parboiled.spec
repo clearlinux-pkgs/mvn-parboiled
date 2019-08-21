@@ -4,12 +4,16 @@
 #
 Name     : mvn-parboiled
 Version  : 1.1.4
-Release  : 2
+Release  : 3
 URL      : https://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar
 Source0  : https://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar
-Source1  : https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar
-Source2  : https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom
-Source3  : https://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom
+Source1  : https://repo.gradle.org/gradle/libs-releases/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.jar
+Source2  : https://repo.gradle.org/gradle/libs-releases/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.pom
+Source3  : https://repo.gradle.org/gradle/libs-releases/org/parboiled/parboiled-java/1.1.7/parboiled-java-1.1.7.jar
+Source4  : https://repo.gradle.org/gradle/libs-releases/org/parboiled/parboiled-java/1.1.7/parboiled-java-1.1.7.pom
+Source5  : https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar
+Source6  : https://repo.maven.apache.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom
+Source7  : https://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -27,6 +31,7 @@ data components for the mvn-parboiled package.
 
 
 %prep
+%setup -q -n META-INF
 
 %build
 
@@ -34,14 +39,26 @@ data components for the mvn-parboiled package.
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.4
 cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar
 
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.4
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.7
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.7
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.7
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.7/parboiled-java-1.1.7.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.7
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.7/parboiled-java-1.1.7.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.4
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.4
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.4
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom
 
 
 %files
@@ -51,5 +68,9 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/parboiled/parboiled
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.jar
 /usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.4/parboiled-core-1.1.4.pom
+/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.jar
+/usr/share/java/.m2/repository/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.pom
 /usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar
 /usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom
+/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.7/parboiled-java-1.1.7.jar
+/usr/share/java/.m2/repository/org/parboiled/parboiled-java/1.1.7/parboiled-java-1.1.7.pom
